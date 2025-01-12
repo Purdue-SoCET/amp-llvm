@@ -18,6 +18,11 @@ class RISCVBuiltin<string prototype, string features = ""> : TargetBuiltin {
   let Features = features;
 }
 
+//===----------------------------------------------------------------------===//
+// AMP extension.
+//===----------------------------------------------------------------------===//
+def factorial : RISCVBuiltin<"unsigned int(unsigned int)">;
+
 let Attributes = [NoThrow, Const] in {
 //===----------------------------------------------------------------------===//
 // Zbb extension.

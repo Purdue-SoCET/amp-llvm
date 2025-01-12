@@ -23071,6 +23071,11 @@ Value *CodeGenFunction::EmitRISCVBuiltinExpr(unsigned BuiltinID,
   llvm::SmallVector<llvm::Type *, 2> IntrinsicTypes;
   switch (BuiltinID) {
   default: llvm_unreachable("unexpected builtin ID");
+  // --- AMP Extension. -------------------------------------------------------
+  case RISCV::BI__builtin_riscv_factorial:
+    ID = Intrinsic::riscv_factorial;
+    break;
+  // --------------------------------------------------------------------------
   case RISCV::BI__builtin_riscv_orc_b_32:
   case RISCV::BI__builtin_riscv_orc_b_64:
   case RISCV::BI__builtin_riscv_clmul_32:

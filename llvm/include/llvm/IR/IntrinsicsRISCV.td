@@ -11,6 +11,18 @@
 //===----------------------------------------------------------------------===//
 
 //===----------------------------------------------------------------------===//
+// AMP extension.
+//===----------------------------------------------------------------------===//
+let TargetPrefix = "riscv" in {
+
+  class RiscvFactorial
+      : Intrinsic<[llvm_i32_ty], [llvm_i32_ty],
+              [IntrNoMem, IntrWillReturn, IntrSpeculatable]>;
+  
+  def int_riscv_factorial : RiscvFactorial;
+}
+
+//===----------------------------------------------------------------------===//
 // Atomics
 
 // Atomic Intrinsics have multiple versions for different access widths, which
