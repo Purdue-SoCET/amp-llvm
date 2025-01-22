@@ -23075,6 +23075,15 @@ Value *CodeGenFunction::EmitRISCVBuiltinExpr(unsigned BuiltinID,
   case RISCV::BI__builtin_riscv_factorial:
     ID = Intrinsic::riscv_factorial;
     break;
+  case RISCV::BI__builtin_riscv_loadmatrix:
+    ID = Intrinsic::riscv_loadmatrix;
+    break;
+  case RISCV::BI__builtin_riscv_storematrix:
+    ID = Intrinsic::riscv_storematrix;
+    break;
+  // case RISCV::BI__builtin_riscv_gemm:
+  //   ID = Intrinsic::riscv_gemm;
+  //   break;
   // --------------------------------------------------------------------------
   case RISCV::BI__builtin_riscv_orc_b_32:
   case RISCV::BI__builtin_riscv_orc_b_64:

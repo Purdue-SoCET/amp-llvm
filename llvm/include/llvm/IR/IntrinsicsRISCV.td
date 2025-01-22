@@ -22,6 +22,31 @@ let TargetPrefix = "riscv" in {
   def int_riscv_factorial : RiscvFactorial;
 }
 
+let TargetPrefix = "riscv" in {
+
+  class AmpLoadMatrix
+      : Intrinsic<[], [llvm_ptr_ty, llvm_i32_ty, llvm_i32_ty, llvm_i32_ty]>;
+  
+  def int_riscv_loadmatrix : AmpLoadMatrix;
+}
+
+let TargetPrefix = "riscv" in {
+
+  class AmpStoreMatrix
+      : Intrinsic<[], [llvm_ptr_ty, llvm_i32_ty, llvm_i32_ty, llvm_i32_ty]>;
+  
+  def int_riscv_storematrix : AmpStoreMatrix;
+}
+
+//let TargetPrefix = "riscv" in {
+
+//  class AmpGEMM
+//      : Intrinsic<[], [llvm_i32_ty, llvm_i32_ty, llvm_i32_ty, llvm_i32_ty],
+//              [IntrNoMem]>;
+  
+//  def int_riscv_gemm : AmpGEMM;
+//}
+
 //===----------------------------------------------------------------------===//
 // Atomics
 

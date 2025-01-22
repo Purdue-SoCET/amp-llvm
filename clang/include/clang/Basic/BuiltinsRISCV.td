@@ -23,6 +23,12 @@ class RISCVBuiltin<string prototype, string features = ""> : TargetBuiltin {
 //===----------------------------------------------------------------------===//
 def factorial : RISCVBuiltin<"unsigned int(unsigned int)">;
 
+// returns 0 for success, 1 for failure
+def loadmatrix : RISCVBuiltin<"void(void*, unsigned int, unsigned int)">;
+def storematrix : RISCVBuiltin<"void(void*, unsigned int, unsigned int)">;
+
+//def gemm : RISCVBuiltin<"void(unsigned int, unsigned int, unsigned int, unsigned int)">;
+
 let Attributes = [NoThrow, Const] in {
 //===----------------------------------------------------------------------===//
 // Zbb extension.
